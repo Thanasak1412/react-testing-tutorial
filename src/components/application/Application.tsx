@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 function Application() {
+  const [fullName, setFullName] = useState('');
+
   return (
     <>
       <h1>Job application form</h1>
@@ -10,7 +14,13 @@ function Application() {
       <form>
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" placeholder="Fullname" value="Vishwas" onChange={() => {}} />
+          <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="bio">Bio</label>

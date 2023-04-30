@@ -1,16 +1,14 @@
-import { CounterTwoProps } from './CounterTwo.types'
+import { CounterTwoProps } from './CounterTwo.types';
 
-export const CounterTwo = (props: CounterTwoProps) => {
+function CounterTwo({ count, handleIncrement, handleDecrement }: CounterTwoProps) {
   return (
     <div>
       <h1>Counter Two</h1>
-      <p>{props.count}</p>
-      {props.handleIncrement && (
-        <button onClick={props.handleIncrement}>Increment</button>
-      )}
-      {props.handleDecrement && (
-        <button onClick={props.handleDecrement}>Decrement</button>
-      )}
+      <p data-testid="count-value">{count}</p>
+      {handleIncrement && <button onClick={handleIncrement}>Increment</button>}
+      {handleDecrement && <button onClick={handleDecrement}>Decrement</button>}
     </div>
-  )
+  );
 }
+
+export default CounterTwo;
