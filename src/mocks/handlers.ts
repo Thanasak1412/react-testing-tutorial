@@ -1,7 +1,7 @@
-import { rest } from 'msw'
+import { rest } from 'msw';
 
 export const handlers = [
-  rest.get('https://jsonplaceholder.typicode.com/users', (req, res, ctx) =>
+  rest.get('https://jsonplaceholder.typicode.com/users', (_, res, ctx) =>
     res(
       ctx.status(200),
       ctx.json([
@@ -17,4 +17,4 @@ export const handlers = [
       ])
     )
   ),
-]
+];
